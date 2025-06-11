@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:elderly_care/data/api/signup_api_service.dart';
 import '../remote/request/signup_request.dart';
 import '../remote/response/signup_response.dart';
-import '../../constants/api_constants.dart';
+import '../constants/api_constants.dart';
 
 class SignUpRepository {
   final SignUpApiService apiService;

@@ -1,10 +1,10 @@
-import 'package:elderly_care/screens/auth/landing_page.dart';
-import 'package:elderly_care/screens/auth/login_screen.dart';
-import 'package:elderly_care/screens/auth/signup_screen.dart';
-import 'package:elderly_care/screens/care_schedule_screen.dart';
-import 'package:elderly_care/screens/nurse_main_tabs.dart';
-import 'package:elderly_care/screens/user_main_tabs.dart';
-import 'package:elderly_care/screens/view_detail_screen.dart';
+import 'package:elderly_care/presentation/screens/landing_page.dart';
+import 'package:elderly_care/presentation/screens/login_screen.dart';
+import 'package:elderly_care/presentation/screens/signup_screen.dart';
+import 'package:elderly_care/presentation/screens/care_schedule_screen.dart';
+import 'package:elderly_care/presentation/screens/nurse_main_tabs.dart';
+import 'package:elderly_care/presentation/screens/user_main_tabs.dart';
+import 'package:elderly_care/presentation/screens/view_detail_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
