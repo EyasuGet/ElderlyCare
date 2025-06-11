@@ -12,7 +12,7 @@ final router = GoRouter(
     GoRoute(
       path: '/',
       builder: (context, state) => LandingPage(
-        onGetStarted: () => context.go('/signup'),
+        onGetStarted: () => context.go('/login'),
       ),
     ),
     GoRoute(

@@ -67,11 +67,12 @@ class LandingPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 50), // Add spacing before button
+                  const SizedBox(height: 50),
                   SizedBox(
                     width: 300,
                     height: 70,
                     child: ElevatedButton(
+                      key: const Key('getStartedButton'),
                       onPressed: onGetStarted,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: primaryColor,
@@ -89,7 +90,7 @@ class LandingPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20), // Final bottom spacing
+                  const SizedBox(height: 20),
                 ],
               ),
             );

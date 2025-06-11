@@ -27,7 +27,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   @override
   void initState() {
     super.initState();
-    // Reset the login state every time the login screen is shown
     Future.microtask(() {
       ref.read(loginViewModelProvider.notifier).handleEvent(ClearLoginResults());
     });
@@ -57,7 +56,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     final loginState = ref.watch(loginViewModelProvider);
     final loginViewModel = ref.read(loginViewModelProvider.notifier);
 
-    // Synchronize controllers with state
     _updateControllersIfNeeded(loginState.email, loginState.password);
 
     if (loginState.isSuccess) {
@@ -99,6 +97,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             ),
             const SizedBox(height: 28),
             _LoginTextField(
+              key: const Key('loginEmailField'),
               label: "Enter your email",
               placeholder: "Email",
               controller: _emailController,
@@ -107,6 +106,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   loginViewModel.handleEvent(OnEmailChange(val)),
             ),
             _LoginTextField(
+              key: const Key('loginPasswordField'),
               label: "Enter your password",
               placeholder: "Password",
               controller: _passwordController,
@@ -140,6 +140,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 width: double.infinity,
                 height: 60,
                 child: ElevatedButton(
+                  key: const Key('loginButton'),
                   onPressed: () {
                     if (_emailController.text.isNotEmpty &&
                         _passwordController.text.isNotEmpty) {
@@ -173,6 +174,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   style: TextStyle(color: Color(0xFF1D6A6E)),
                 ),
                 GestureDetector(
+                  key: const Key('signUpButton'),
                   onTap: widget.onSignUpClick,
                   child: const Text(
                     "Sign up",

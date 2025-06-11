@@ -127,6 +127,8 @@ class _NurseProfileScreenState extends ConsumerState<NurseProfileScreen> {
                           onPressed: () async {
                             // Clear session via ViewModel
                             await viewModel.clearSessionOnLogout();
+                            ref.invalidate(userProfileViewModelProvider);
+                            ref.invalidate(loginViewModelProvider);
                             
                             ref.read(providers.loginViewModelProvider.notifier).reset();
                             if (mounted) context.go('/signup');

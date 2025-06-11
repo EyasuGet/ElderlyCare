@@ -104,8 +104,8 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
                 ref.invalidate(userProfileViewModelProvider);
                 ref.invalidate(loginViewModelProvider);
                 // Invalidate any other providers that hold user data
-
-                // Then, call the onLogoutClick which should handle navigation
+                ref.read(loginViewModelProvider.notifier).reset();
+                // Then , call the onLogoutClick which should handle navigation
                 widget.onLogoutClick();
               },
               child: const Text("Logout"),

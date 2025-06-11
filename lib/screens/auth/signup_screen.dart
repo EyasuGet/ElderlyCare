@@ -41,11 +41,13 @@ class SignUpScreen extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 RoleToggleButton(
+                  key: const Key('userRoleButton'),
                   text: "User",
                   selected: state.role == "USER",
                   onClick: () => viewModel.handleEvent(OnRoleChange("USER")),
                 ),
                 RoleToggleButton(
+                  key: const Key('nurseRoleButton'),
                   text: "Nurse",
                   selected: state.role == "NURSE",
                   onClick: () => viewModel.handleEvent(OnRoleChange("NURSE")),
@@ -65,6 +67,7 @@ class SignUpScreen extends ConsumerWidget {
               ),
             ),
             SignUpTextField(
+              key: const Key('signupNameField'),
               label: "Enter Your Name",
               value: state.name,
               onChanged: (val) => viewModel.handleEvent(OnNameChange(val)),
@@ -81,6 +84,7 @@ class SignUpScreen extends ConsumerWidget {
               ),
             ),
             SignUpTextField(
+              key: const Key('signupEmailField'),
               label: "Enter Your Email",
               value: state.email,
               onChanged: (val) => viewModel.handleEvent(OnEmailChange(val)),
@@ -97,6 +101,7 @@ class SignUpScreen extends ConsumerWidget {
               ),
             ),
             SignUpTextField(
+              key: const Key('signupPasswordField'),
               label: "Enter your password",
               value: state.password,
               isPassword: true,
@@ -114,6 +119,7 @@ class SignUpScreen extends ConsumerWidget {
               ),
             ),
             SignUpTextField(
+              key: const Key('signupConfirmPasswordField'),
               label: "ReEnter Your password",
               value: state.confirmPassword,
               isPassword: true,
@@ -124,6 +130,7 @@ class SignUpScreen extends ConsumerWidget {
               width: double.infinity,
               height: 56,
               child: ElevatedButton(
+                key: const Key('createAccountButton'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primaryColor,
                   shape: RoundedRectangleBorder(
@@ -154,6 +161,7 @@ class SignUpScreen extends ConsumerWidget {
               children: [
                 const Text("Already have an account? "),
                 GestureDetector(
+                  key: const Key('loginLink'),
                   onTap: () {
                     viewModel.handleEvent(ClearSignupResults());
                     onLoginClick();
